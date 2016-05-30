@@ -10,5 +10,15 @@ package E1;
  * @author Oscar Torres
  */
 public class Cesar {
-    
+     
+     
+     public String cifrar(String m, int c)
+     {
+         for(int i = 0; i < m.length(); i++)
+         {
+            char 
+         }
+         return m; 
+     }
+     
 }
