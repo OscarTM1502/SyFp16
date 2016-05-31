@@ -38,6 +38,7 @@ public class Cesar {
          
         String s = cc.cifrar("hola", 2);
         String d = cc.descifrar("jqnc",-2);
+        
          System.out.println(s);
          System.out.println(d);
    }
