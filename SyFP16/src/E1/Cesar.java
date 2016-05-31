@@ -28,7 +28,7 @@ public class Cesar {
          String resultado = "";
          for(int i = 0; i < m.length(); i++)
          {
-            resultado = resultado + (char)(m.charAt(i) + c);   
+            resultado = resultado + (char)(m.charAt(i) + c - (c+c));   
          }
          
          return resultado;
@@ -37,7 +37,7 @@ public class Cesar {
         Cesar cc = new Cesar();
          
         String s = cc.cifrar("hola", 2);
-        String d = cc.descifrar("jqnc",-2);
+        String d = cc.descifrar("jqnc",2);
         
          System.out.println(s);
          System.out.println(d);
