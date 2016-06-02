@@ -24,11 +24,10 @@ public class Cesargraf extends javax.swing.JFrame  {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String mc;
-                //int co;
+                Integer i = new Integer(consTF.getText());
                 mc = tA.getText();
-                //co = consTF.(int)getText;
                 Cesar c = new Cesar();
-                String r = c.cifrar(mc,8);
+                String r = c.cifrar(mc,i.intValue());
                 tAd.setText(r);
                 
             }
@@ -38,11 +37,10 @@ public class Cesargraf extends javax.swing.JFrame  {
             @Override
             public void actionPerformed(ActionEvent e) {
              String md;
-                //Integer c = new Integer(consTF.getText());
+                Integer i = new Integer(consTF.getText());
                 md = tAd.getText();
-               // c = consTF.
                 Cesar c = new Cesar();
-                String r = c.descifrar(md,8);
+                String r = c.descifrar(md,i.intValue());
                 tA.setText(r);   
             }
         });
