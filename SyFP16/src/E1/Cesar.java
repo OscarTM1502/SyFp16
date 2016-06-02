@@ -17,7 +17,15 @@ public class Cesar {
          String resultado = "";
          for(int i = 0; i < m.length(); i++)
          {
-           resultado = resultado + (char)(m.charAt(i) + c); 
+              if((int)m.charAt(i) == 10)
+             {
+               resultado = resultado + (m.charAt(i));  
+             }
+              else
+              {
+                resultado = resultado + (char)(m.charAt(i) + c);   
+              }
+           
          }
          return resultado; 
         
@@ -28,7 +36,9 @@ public class Cesar {
          String resultado = "";
          for(int i = 0; i < m.length(); i++)
          {
-            resultado = resultado + (char)(m.charAt(i) + c - (c+c));   
+             
+                resultado = resultado + (char)(m.charAt(i) + c - (c+c)); 
+                  
          }
          
          return resultado;
