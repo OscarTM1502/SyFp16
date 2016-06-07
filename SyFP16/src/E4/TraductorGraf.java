@@ -8,51 +8,61 @@ package E4;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import E5.Traductor;
 
 /**
  *
  * @author Oscar Torres
  */
 public class TraductorGraf extends javax.swing.JFrame {
-
+      
+    Traductor d;
     /**
      * Creates new form TraductorGraf
      */
     public TraductorGraf() {
         initComponents();
+            d = new Traductor();
+            d.agregar("Hola", "Hello");
+            d.agregar("Como", "How");
+            d.agregar("yo","Me");
+            d.agregar("Cuando", "When");
+            d.agregar("Que", "What");
+            d.agregar("Final","End");
+        
+            
+            
+        
         
         tOrig.addKeyListener(new KeyAdapter() {
             String palabra = "";
+            String traduccion = "";
             @Override
             public void keyTyped(KeyEvent e) {
                
              
-                
-                //if( e.getKeyChar() != ' ' && e.getKeyChar() != 10)
-               if(e.getKeyChar()!= 8)
+                char key =e.getKeyChar();
+        
+               if(key != ' ' && key != 10 && key!= 8)
                 {
-                   // palabra =  palabra.substring(0, palabra.length()-1);
-                    
-                    palabra =  palabra + e.getKeyChar();
+                
+                    palabra =  palabra + key;
                 }
-               //
-               else if( e.getKeyChar() != ' ' && e.getKeyChar() != 10)
+               
+               if(key == 8)
                 {
                 
                   palabra =  palabra.substring(0, palabra.length()-1);
                  
-                  
-                  // palabra =  palabra + e.getKeyChar();
-                    tTrad.setText(palabra);
                     
                 }
-                else
+                if (key == 10 || key == ' ')
                 {
-                   tTrad.setText(palabra);
-                     palabra = "";
+                   traduccion = traduccion + "  " + d.traducir(palabra);
+                    palabra = "";
                 }
+               tTrad.setText(traduccion);
                
-                tTrad.setText(palabra); 
               
             }
  });
