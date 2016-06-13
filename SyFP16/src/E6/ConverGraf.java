@@ -19,7 +19,7 @@ public class ConverGraf extends javax.swing.JFrame {
      */
     public ConverGraf() {
         initComponents();
-        cB2.removeAllItems();
+        cB1.removeAllItems();
         cB1.addItem("Centimetros");
         cB1.addItem("Metros");
         cB1.addItem("Kilometros");
@@ -40,9 +40,20 @@ public class ConverGraf extends javax.swing.JFrame {
         botonConver.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                
+               
+                String u1 = (String) cB1.getSelectedItem();
+                String u2 = (String) cB2.getSelectedItem();
                 tF1.getText();
-                cB1.getSelectedItem();
-                cB2.getSelectedItem();
+                Double p = new Double(tF1.getText());
+                double valor = p.doubleValue();
+                Convertidor con = new Convertidor ();
+                Double d1 = con.convertir(u1, valor, u2);
+                //double d1 = con.convertir(u1, valor, u2);
+                Double t = new Double(d1);
+                
+                tF2.setText(d1.toString());
+                //tF2.setText(t.toString());
                 
                 
             }
