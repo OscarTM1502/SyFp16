@@ -14,7 +14,33 @@ import E9.TestMyException;
  */
 public class Cuenta {
     
-    double saldo = 100.00;
+     double saldo ;
+     private int numcuenta;
+     private int idcliente;
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public int getNumcuenta() {
+        return numcuenta;
+    }
+
+    public int getIdcliente() {
+        return idcliente;
+    }
+
+    public Cuenta() {
+    }
+
+    public Cuenta(double saldo, int numcuenta, int idcliente) {
+        this.saldo = saldo;
+        this.numcuenta = numcuenta;
+        this.idcliente = idcliente;
+    }
+
+ 
+     
     
     
     double checkSaldo(){
@@ -59,7 +85,8 @@ public class Cuenta {
        double saldo = cue.checkSaldo();
         try {
             System.out.println("Saldo al inicio " + saldo);
-            cue.deposito(20.00);
+               cue.deposito(20.00);
+            
             
             
         } catch ( WrongAmountException ex) {
