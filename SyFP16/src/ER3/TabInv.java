@@ -36,7 +36,7 @@ public class TabInv extends AbstractTableModel{
         g = ContarGlue();
         p = ContarPuzzle();
         s = ContarStorage();
-         matr = new String[3][2];
+         matr = new String[4][3];
          matr[0][0] = "1";
          matr[0][1] = "FRAME";
          matr[0][2] =  " " + f;
@@ -185,16 +185,16 @@ public class TabInv extends AbstractTableModel{
 
     @Override
     public int getRowCount() {
-       return 3;
+       return 4;
     }
 
     @Override
     public int getColumnCount() {
-       return 2;
+       return 3;
     }
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
-      return matr[3][2];
+      return matr[rowIndex][columnIndex];
     }
 }
